@@ -48,13 +48,17 @@ WHEN I click on the Logout button
 THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button   
 
 ## Description     
-Need to update: This project consisted in building the back end for a social network web application. The application uses Express.js for routing, a MongoDB database, and the Mongoose ODM. Models are included for Users and Thoughts, and a Schema for Reactions. Users can use this application to share their thoughts, create a friends list, and react to thoughts added by their friends.
+This project refactored code that had a fully functioning Google Books API search engine built with a RESTful API, and restructured it to be a GraphQL API built with the Apollo Server. The application uses the MERN stack, with React on the front end, MongoDB, Node.js and Express.js on the back end.    
+
+Users can search for books and browse titles without needing to create an account and log in. After creating an account, users also have the option to save their favorite book titles, or to remove specific books from their favorites list, displayed on a separate page.     
 
 ## Installation   
-Need to update: Clone the repository in GitHub, and install Node.js and MongoDB. You will need to use Express.js and Mongoose packages.               
+Clone the repository in GitHub. Install Node.js and MongoDB. Import Express.js and Mongoose.                 
 
 # Usage    
-Need to update: To use this application, open the integrated terminal and run npm init, then npm i (install). You might be required to also run 'npm install mongoose' as well. Seeding the database is optional, but will allow testing certain routes without needing to create users and thoughts from scratch. Finally, run 'node index' and open Insomnia to run the API routes.           
+To use this application, open the integrated terminal and run npm init, then npm i (install).    
+Next, run npm run develop, which will launch `http://localhost:3000/` in the browser.    
+Open `localhost:3001/graphql` in the browser to launch the Apollo Sandbox and test the application query and mutations.             
 
 ## Demo   
 Need to add:
