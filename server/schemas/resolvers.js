@@ -36,21 +36,21 @@ const resolvers = {
             return { token, user };
         },
         // TODO! needs rewritten
-        saveBook: async (parent, { body }, context) => {
+        saveBook: async (parent, { input }, context) => {
             if (context.user) {
                 return User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedbooks: body } },
+                    { $addToSet: { savedbooks: input } },
                     { new: true, runValidators: true }
                 );
             }
         },
         // TODO! needs rewritten
-        deleteBook: async (parent, { params }, context) => {
+        removeBook: async (parent, { bookId }, context) => {
             if (context.user) {
                 return User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { savedBooks: { bookId: params.bookId } } },
+                    { $pull: { savedBooks: { bookId: bookId } } },
                     { new: true }
                 );
             }
