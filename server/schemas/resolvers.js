@@ -7,7 +7,7 @@ const { signToken } = require('../utils.auth');
 // do we need to user the Book model at all here? it is not exported in index
 const resolvers = {
     Query: {
-        user: async (parent, { _id, username }) => {
+        me: async (parent, { _id, username }) => {
             const id = _id ? { _id } : {};
             return User.findOne({ id, username });
         },
