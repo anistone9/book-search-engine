@@ -1,10 +1,9 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
-const { signToken } = require('../utils.auth');
+const { signToken } = require('../utils/auth');
 
 // TODO! for Query part:
 // is this correct, to look up a user by either id or username, based on user-controller?
-// do we need to user the Book model at all here? it is not exported in index
 const resolvers = {
     Query: {
         me: async (parent, { _id, username }) => {
@@ -35,17 +34,18 @@ const resolvers = {
 
             return { token, user };
         },
-        // TODO! needs rewritten
-        saveBook: async (parent, { input }, context) => {
+
+        saveBook: async (parent, { bookData }, context) => {
             if (context.user) {
+                console.log(bookData)
                 return User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedbooks: input } },
+                    { $addToSet: { savedBooks: bookData } },
                     { new: true, runValidators: true }
                 );
             }
         },
-        // TODO! needs rewritten
+
         removeBook: async (parent, { bookId }, context) => {
             if (context.user) {
                 return User.findOneAndUpdate(
