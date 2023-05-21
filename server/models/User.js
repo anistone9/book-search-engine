@@ -54,4 +54,5 @@ userSchema.virtual('bookCount').get(function () {
 
 const User = model('User', userSchema);
 
+// check on color difference here
 module.exports = User;

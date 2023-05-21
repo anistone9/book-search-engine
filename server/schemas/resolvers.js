@@ -6,9 +6,10 @@ const { signToken } = require('../utils/auth');
 // is this correct, to look up a user by either id or username, based on user-controller?
 const resolvers = {
     Query: {
-        me: async (parent, { _id, username }) => {
-            const id = _id ? { _id } : {};
-            return User.findOne({ id, username });
+        me: async (parent, args, context) => {
+            if (context.user) {
+                return User.findOne({ _id: context.user_id})
+            }
         },
     },
     Mutation: {
