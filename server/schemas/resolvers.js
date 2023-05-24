@@ -8,7 +8,8 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user_id})
+                const userData = await User.findOne({ _id: context.user._id}).select('-__v-password');
+                return userData;
             }
         },
     },

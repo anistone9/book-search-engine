@@ -8,7 +8,6 @@ import {
 } from 'react-bootstrap';
 
 import { removeBookId } from '../utils/localStorage';
-
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
@@ -17,7 +16,7 @@ import { REMOVE_BOOK } from '../utils/mutations';
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
   const [removeBook] = useMutation(REMOVE_BOOK);
-  const userData = data?.me || [];
+  const userData = data?.me || {};
 
   const handleDeleteBook = async (bookId) => {
     try {
@@ -51,7 +50,7 @@ const SavedBooks = () => {
             return (
               <Col md="4">
                 <Card key={book.bookId} border='dark'>
-                  {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
+                  {book.image ? (<Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />) : null}
                   <Card.Body>
                     <Card.Title>{book.title}</Card.Title>
                     <p className='small'>Authors: {book.authors}</p>
