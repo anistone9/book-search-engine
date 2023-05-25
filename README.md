@@ -7,7 +7,7 @@ MERN Stack App using React, MongoDB, Node.js, Express.js, and GraphQL API
 - [Description](#description)   
 - [Installation](#installation)    
 - [Usage](#usage)    
-- [Demo](#demo)   
+- [Deployed-App](#deployed-app)   
 - [Credits](#credits)   
 - [License](#license)   
 
@@ -50,17 +50,17 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ## Description     
 This project refactored code that had a fully functioning Google Books API search engine built with a RESTful API, and restructured it to be a GraphQL API built with the Apollo Server. The application uses the MERN stack, with React on the front end, MongoDB, Node.js and Express.js on the back end.    
 
-Users can search for books and browse titles without needing to create an account and log in. After creating an account, users also have the option to save their favorite book titles, or to remove specific books from their favorites list, displayed on a separate page.     
+Users can search for books and browse titles without needing to create an account or log in. After creating an account, users also have the option to save their favorite book titles, or to remove specific books from their favorites list, displayed on a separate page.     
 
 ## Installation   
 Clone the repository in GitHub. Install Node.js and MongoDB. Import Express.js and Mongoose.                 
 
-# Usage    
-To use this application, open the integrated terminal and run npm init, then npm i (install).    
+## Usage    
+To use this application, open the integrated terminal and run npm i (install).    
 Next, run npm run develop, which will launch `http://localhost:3000/` in the browser.    
-Open `localhost:3001/graphql` in the browser to launch the Apollo Sandbox and test the application query and mutations.             
+Open `localhost:3000/graphql` in the browser to launch the Apollo Sandbox and test the application query and mutations.             
 
-## Demo   
+## Deployed app   
 Need to add:   
 
 ## Credits   
